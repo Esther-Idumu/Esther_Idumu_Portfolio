@@ -1,4 +1,4 @@
-    import { useEffect } from 'react';
+import { useEffect } from 'react';
     import { Link, Navigate, useParams } from 'react-router-dom';
     import Block from './Block';
     import Contact from '../../components/Contact/Contact';
@@ -33,7 +33,7 @@
             ← All projects
             </Link>
 
-            <p className="project-hero__status">{project.status}</p>
+            {project.status && <p className="project-hero__status">{project.status}</p>}
             <h1 className="project-hero__title">{project.title}</h1>
             <p className="project-hero__subtitle">{project.subtitle}</p>
 
@@ -58,6 +58,32 @@
             </div>
             )}
         </header>
+
+            {project.demo && (
+            <section className="project-section project-demo" aria-labelledby="demo-title">
+                <div className="project-section__head">
+                <h2 id="demo-title" className="project-section__title">
+                    {project.demo.title ?? 'Demo video'}
+                </h2>
+                </div>
+                <figure className="project-demo__figure">
+                <video
+                    className="project-demo__video"
+                    controls
+                    playsInline
+                    preload="metadata"
+                    poster={project.demo.poster}
+                >
+                    <source src={project.demo.video} type="video/mp4" />
+                    Your browser can’t play this video.{' '}
+                    <a href={project.demo.video}>Download it instead</a>.
+                </video>
+                {project.demo.caption && (
+                    <figcaption className="project-demo__caption">{project.demo.caption}</figcaption>
+                )}
+                </figure>
+            </section>
+            )}
 
         {project.sections.map((section, index) => (
             <section key={section.title} className="project-section">

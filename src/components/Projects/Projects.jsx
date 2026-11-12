@@ -11,7 +11,8 @@ export default function Projects({ items }) {
         {items.map((project, index) => (
           <Link key={project.slug} to={`/projects/${project.slug}`} className="project-card">
             <span className="project-card__num">
-              {String(index + 1).padStart(2, '0')} · {project.status}
+              {String(index + 1).padStart(2, '0')}
+              {project.status && ` · ${project.status}`}
             </span>
             <span className="project-card__arrow" aria-hidden="true">→</span>
             <h3 className="project-card__title">{project.title}</h3>

@@ -1,4 +1,3 @@
-
 export const projects = [
   {
     slug: 'verivoice',
@@ -11,7 +10,20 @@ export const projects = [
     intro:
       'VeriVoice is a voice-based attendance system that combines automatic speech recognition and speaker verification to automate classroom attendance. Students verify their presence by speaking a predefined attendance phrase, while the system checks both the spoken phrase and the speaker’s voice against previously enrolled voice samples.',
     tags: ['Python', 'FastAPI', 'PostgreSQL', 'React', 'Whisper', 'SpeechBrain'],
-    links: [],
+    links: [
+      {
+        label: 'GitHub repository',
+        href: 'https://github.com/Esther-Idumu/voice-based-attendance-system',
+      },
+    ],
+    // Demo video shown under the intro. The files are in public/demo/.
+    demo: {
+      title: 'Demo video',
+      video: '/demo/verivoice-demo.mp4',
+      poster: '/demo/verivoice-demo-poster.jpg',
+      caption:
+        'A student with enrolled voice samples says “present”. The system verifies the voice and marks attendance.',
+    },
     sections: [
       {
         title: 'Project overview',
@@ -116,7 +128,10 @@ export const projects = [
     intro:
       'DevLink is a developer collaboration platform designed to connect developers with project owners looking for collaborators. It provides a space where developers can discover projects, apply to contribute, and work together to gain practical experience and build their portfolios.',
     tags: ['React', 'Django', 'Python', 'PostgreSQL'],
-    links: [],
+    links: [
+    { label: 'Live demo', href: 'https://devlink-collab.vercel.app/' },
+    { label: 'GitHub repository', href: 'https://github.com/Esther-Idumu/developer_collaboration_platform' },
+  ],
     sections: [
       {
         title: 'Project overview',
