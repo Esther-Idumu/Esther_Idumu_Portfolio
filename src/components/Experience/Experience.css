@@ -1,0 +1,95 @@
+.experience {
+  background: var(--white);
+  padding: clamp(4rem, 10vw, 8rem) var(--pad-x);
+  overflow: hidden;
+}
+
+/* Education sits right under Experience on the same white background: tighten the gap */
+.experience + .experience {
+  padding-top: 0;
+}
+
+.experience__list {
+  display: grid;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.exp-card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    'num year'
+    'role role'
+    'company company'
+    'summary summary'
+    'tags tags';
+  padding: clamp(1.25rem, 3vw, 3rem);
+  border: var(--border) solid var(--black);
+  background: var(--white);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.exp-card__num {
+  grid-area: num;
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 8vw, 6.5rem);
+  line-height: 1;
+  color: var(--gray-200);
+}
+
+.exp-card__year {
+  grid-area: year;
+  align-self: start;
+  height: fit-content;
+  padding-bottom: 0.4rem;
+  border-bottom: 5px solid var(--black);
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2.5vw, 2rem);
+}
+
+.exp-card__role {
+  grid-area: role;
+  margin-top: 1.5rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 4vw, 3.25rem);
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+.exp-card__company {
+  grid-area: company;
+  margin-top: 0.4rem;
+  font-size: clamp(1.1rem, 2vw, 1.6rem);
+  font-weight: 600;
+  color: var(--gray-700);
+}
+
+.exp-card__summary {
+  grid-area: summary;
+  margin-top: 1rem;
+  font-size: clamp(0.95rem, 1.6vw, 1.25rem);
+}
+
+.exp-card__tags {
+  grid-area: tags;
+  margin-top: 1.5rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--gray-500);
+}
+
+/* Hover: card tilts and gets a hard black shadow, role turns italic. */
+.exp-card:hover {
+  transform: rotate(1deg) translate(-4px, -4px);
+  box-shadow: 14px 14px 0 var(--black);
+}
+.exp-card:nth-child(even):hover {
+  transform: rotate(-1deg) translate(-4px, -4px);
+}
+.exp-card:hover .exp-card__role {
+  font-style: italic;
+}

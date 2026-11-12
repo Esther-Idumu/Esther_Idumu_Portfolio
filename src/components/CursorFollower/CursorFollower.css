@@ -1,0 +1,21 @@
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--white);
+  /* "difference" makes the dot black on white sections and white on black ones */
+  mix-blend-mode: difference;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+@media (hover: none) {
+  .cursor-dot {
+    display: none;
+  }
+}

@@ -1,0 +1,31 @@
+.skills {
+  background: var(--white);
+  padding: clamp(4rem, 10vw, 8rem) var(--pad-x);
+  overflow: hidden;
+}
+
+.skills__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(2rem, 5vw, 4rem) clamp(2rem, 8vw, 8rem);
+}
+
+.skills__group-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.skills__items {
+  margin-top: 0.6rem;
+  font-size: clamp(0.95rem, 1.5vw, 1.25rem);
+  line-height: 1.7;
+  color: var(--gray-700);
+}
+
+@media (max-width: 640px) {
+  .skills__grid {
+    grid-template-columns: 1fr;
+  }
+}
